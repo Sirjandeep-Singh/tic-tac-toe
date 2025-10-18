@@ -16,6 +16,7 @@ const createGamebox =  function(id){
 }
 
 const Gameboard = function(){
+    let track = 0;
     //take input name
     let Player1 = createPlayer("Sirjan");
     let Player2 = createPlayer("Deep");
@@ -76,6 +77,8 @@ const Gameboard = function(){
 
     //ResetEverything except score
     const resetwin = function(){
+        playing = 1;
+        track = 0;
         for(let i = 0 ; i < 9 ; i++){
             array[i].state = 0;
             let element = document.getElementById(`${i+1}`);
@@ -128,13 +131,13 @@ const Gameboard = function(){
                 playing = playing == 1? 2 : 1;
             }
         }
-
+        track++;
         //check for winners
         let k = checkwinner();
         if(k != 0){
             if(k == 1){
                 Player1.wins(); 
-                mycongo.textContent = ` Congratulations ${Player2.PlayerName} wins`;
+                mycongo.textContent = ` Congratulations ${Player1.PlayerName} wins`;
             }else{
                 Player2.wins();
                 mycongo.textContent = ` Congratulations ${Player2.PlayerName} wins`;
@@ -144,6 +147,11 @@ const Gameboard = function(){
             head2.textContent = `${Player2.PlayerName} : ${Player2.getScore()}`;
             //call dialogue for winning
             congodig.showModal();
+        }
+
+        //reset on draw
+        if(track == 9){
+            resetwin();
         }
     });
 
