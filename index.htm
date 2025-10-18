@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1 id = "player1"></h1>
+        <h1 id = "player2"></h1>
+    </div>
+    <dialog id = "input">
+        <form action="">
+            <label for="P1">Player-1 Name</label>
+            <input type="text" name="P1" id="P1" placeholder="Sirjandeep">
+            <label for="P1">Player-2 Name</label>
+            <input type="text" name="P2" id="P2" placeholder="ShadowKnightX">
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </dialog>
+    <dialog id="congo" >
+        <div class="center">
+        <div id="mycongo"></div>
+        <button id="continue">
+            Continue
+        </button>
+        </div>
+    </dialog>
+    <div class="board" id="play">
+        <div class="unit" id = "1"></div>
+        <div class="unit" id = "2"></div>
+        <div class="unit" id = "3"></div>
+        <div class="unit" id = "4"></div>
+        <div class="unit" id = "5"></div>
+        <div class="unit" id = "6"></div>
+        <div class="unit" id = "7"></div>
+        <div class="unit" id = "8"></div>
+        <div class="unit" id = "9"></div>
+    </div>
+    <button type="reset" class="reset" id="reset">Reset</button>
+</body>
+</html>
